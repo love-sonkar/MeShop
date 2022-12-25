@@ -1,0 +1,84 @@
+.header {
+  height: 3.75rem;
+  width: 100%;
+  display: flex;
+  grid-auto-flow: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(146, 146, 146);
+  background: linear-gradient(
+    135deg,
+    rgba(9, 120, 121, 1) 0%,
+    rgba(0, 255, 229, 1) 100%
+  );
+  padding: 0 var(--padding);
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.header .logo a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+}
+
+.search {
+  width: 100%;
+}
+.searchbox {
+  border-radius: 0.625rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.525rem;
+  padding: 4px 0.625rem;
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+  box-shadow: var(--shadow);
+}
+
+.searchbox svg {
+  font-size: 0.8rem;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+.searchbox svg:hover,
+svg:focus-visible {
+  color: var(--mainColor);
+}
+
+.searchbox input {
+  outline: none;
+  border: none;
+  background: transparent;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+}
+input::placeholder {
+  color: rgb(0, 0, 0);
+}
+
+.circle {
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+  box-shadow: 0 0 0.125rem 0.0625rem rgba(0, 0, 0, 0.2);
+}
+
+.circle a {
+  color: var(--mainColor);
+}
+
+@media (max-width: 480px) {
+  .header {
+    justify-content: center;
+  }
+  .header .logo,
+  .avatar {
+    display: none;
+  }
+}
