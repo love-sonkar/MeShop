@@ -3,6 +3,7 @@ import { CategorieApi } from "../categorie/CategorieApi";
 import CategorieBadge from "../categorie/CategorieBadge";
 import ProductItem from "../productitem/ProductItem";
 import SkeletonCard from "../skeleton/SkeletonCard";
+import axios from "axios";
 
 import "./product.css";
 
@@ -12,9 +13,9 @@ const Product = () => {
 
   useEffect(() => {
     const data = () => {
-      fetch("https://dummyjson.com/products?limit=10")
-        .then((res) => res.json())
-        .then((data) => setProduct(data.products))
+      axios
+        .get("https://dummyjson.com/products?limit=10")
+        .then((res) => setProduct(res.data.products))
         .catch((e) => console.log(e));
     };
     return data;
