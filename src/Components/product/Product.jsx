@@ -11,14 +11,14 @@ const Product = () => {
   const [Product, setProduct] = useState(null);
   const [categorieItem, setcategorieItem] = useState(null);
 
+  const data = () => {
+    axios
+      .get("https://dummyjson.com/products?limit=10", { headers: "no-core" })
+      .then((res) => setProduct(res.data.products))
+      .catch((e) => console.log(e));
+  };
   useEffect(() => {
-    const data = () => {
-      axios
-        .get("https://dummyjson.com/products?limit=10", { headers: "no-core" })
-        .then((res) => setProduct(res.data.products))
-        .catch((e) => console.log(e));
-    };
-    return data;
+    return data();
   }, []);
   useEffect(() => {
     const categorieFunc = () => {
