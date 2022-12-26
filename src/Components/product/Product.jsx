@@ -14,7 +14,7 @@ const Product = () => {
   useEffect(() => {
     const data = () => {
       axios
-        .get("https://dummyjson.com/products?limit=10", { mode: "no-core" })
+        .get("https://dummyjson.com/products?limit=10", { headers: "no-core" })
         .then((res) => setProduct(res.data.products))
         .catch((e) => console.log(e));
     };
