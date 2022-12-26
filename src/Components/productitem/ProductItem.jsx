@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { DollarSign } from "react-feather";
 import "./productitem.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import BuyProduct from "../buyitem/BuyProduct";
 
-const ProductItem = ({ details, CategorieTrue }) => {
+const ProductItem = ({ details }) => {
+  const [hide, sethide] = useState(false);
+  const [ProductObj, setProductObj] = useState({});
+  const BuyButton = (BuyProduct) => {
+    const ObjProduct = {
+      title: BuyProduct.title,
+      thumbnail: BuyProduct.thumbnail,
+      price: BuyProduct.price,
+    };
+    console.log(BuyProduct);
+    setProductObj(ObjProduct);
+    sethide(true);
+  };
   return (
     <>
+      {hide && <BuyProduct title={ProductObj} sethide={sethide} />}
       <div className="productitem">
         <div className="thumbnail">
           <LazyLoadImage
@@ -18,7 +32,7 @@ const ProductItem = ({ details, CategorieTrue }) => {
         <div className="content__wrapper">
           <div className="titleprice">
             <h1>{details.title}</h1>
-            <p className="price">
+            <p className="price flex">
               <DollarSign />
               {details.price}
             </p>
@@ -27,9 +41,8 @@ const ProductItem = ({ details, CategorieTrue }) => {
             <p>{details.rating}</p>
             <p>{details.description}</p>
           </div>
-          <div className="buybutton">
-            <DollarSign />
-            {details.price}
+          <div onClick={() => BuyButton(details)} className="buybutton">
+            Buy
           </div>
         </div>
       </div>

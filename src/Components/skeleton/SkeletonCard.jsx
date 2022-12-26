@@ -7,7 +7,7 @@ const SkeletonCard = () => {
     <div className="skeleton__card">
       <div className="card__wrapper">
         <Skeleton type="image" />
-        <Skeleton type="price" />
+        <Skeleton type="priceskeleton" />
         <Skeleton type="rating" />
         <Skeleton type="des" />
       </div>
