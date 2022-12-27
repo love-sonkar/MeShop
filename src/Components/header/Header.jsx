@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import SearchBox from "../searchbox/SearchBox";
 import { User } from "react-feather";
 import "./header.css";
@@ -6,10 +6,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo">
-        <a href="">logo</a>
-      </div>
-      <div className="search">
-        <SearchBox />
+        <a href="">Logo</a>
       </div>
       <div className="avatar">
         <div className="circle flex centerAll">
@@ -17,6 +14,9 @@ const Header = () => {
             <User />
           </a>
         </div>
+      </div>
+      <div className="search">
+        <SearchBox />
       </div>
     </div>
   );

@@ -1,0 +1,109 @@
+.buy__container {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  backdrop-filter: blur(8px);
+  padding: 1rem;
+  user-select: none;
+}
+
+.buyproduct {
+  background: linear-gradient(
+    135deg,
+    rgba(9, 120, 121, 1) 0%,
+    rgba(0, 255, 229, 1) 100%
+  );
+  padding: 2rem 2rem 0.625rem 2rem;
+  border-radius: 1px;
+  overflow: hidden;
+  position: relative;
+  height: auto;
+  box-shadow: var(--shadow);
+}
+.buyproduct img {
+  height: 7.25rem;
+  width: 100%;
+}
+
+.content__buy {
+  margin: 0.625rem 0;
+}
+.content__buy h1 {
+  font-size: 1.8rem;
+  color: rgb(255, 255, 255);
+  text-align: left;
+}
+
+.counter__function button {
+  cursor: pointer;
+  padding: 0.3125rem;
+  border: 1px solid var(--mainColor);
+}
+
+.counter__function button svg {
+  height: 1rem;
+}
+.counter__function .show__price {
+  color: rgb(255, 255, 255);
+  border: 1px solid var(--mainColor);
+  border-right: 0;
+  border-left: 0;
+  padding: 0.5rem 0.9375rem;
+  font-size: 1.1rem;
+}
+
+.counter__function .minus {
+  background: transparent;
+  color: rgb(255, 255, 255);
+}
+
+.counter__function .plus {
+  background: linear-gradient(
+    135deg,
+    rgba(9, 120, 121, 1) 0%,
+    rgba(0, 255, 229, 1) 100%
+  );
+
+  color: rgb(255, 255, 255);
+}
+
+.btnProductBuy {
+  width: 100%;
+}
+.btnProductBuy button {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+  border: 1px solid var(--mainColor);
+  outline: none;
+  cursor: pointer;
+  background: rgb(51 139 134);
+  box-shadow: var(--shadow);
+  border-radius: 0.3125rem;
+  transition: 0.3s ease-in;
+  color: rgb(255, 255, 255);
+  margin: 0.9375rem 0 0 0;
+}
+
+.btnProductBuy button:hover {
+  background: transparent;
+}
+
+.closeButton span {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.br {
+  border-left: 1px solid var(--mainColor) !important;
+}
