@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import SearchBox from "../searchbox/SearchBox";
 import { User } from "react-feather";
 import "./header.css";
+import { UserUpdate } from "../../App";
+
 const Header = () => {
+  const username = useContext(UserUpdate);
+
   return (
     <div className="header">
-      <div className="logo">
-        <a href="">Logo</a>
+      <div className="user__value">
+        <p>{username}</p>
       </div>
       <div className="avatar">
         <div className="circle flex centerAll">
-          <a href="#">
+          <a>
             <User />
           </a>
         </div>
