@@ -3,10 +3,10 @@ import "./buyproduct.css";
 import { Minus, Plus, X } from "react-feather";
 const BuyProduct = ({ title, sethide }) => {
   const [BuyPrice, setBuyPrice] = useState(title.price);
-  const [counter, setcounter] = useState(2);
+  const [counter, setcounter] = useState(1);
 
   const Add = () => {
-    setBuyPrice(title.price * counter);
+    setBuyPrice(title.price + BuyPrice);
     setcounter(counter + 1);
   };
 
@@ -24,23 +24,28 @@ const BuyProduct = ({ title, sethide }) => {
           <h1>{title.title}</h1>
         </div>
         <div className="counter__function flex ">
-          {counter != 2 && (
-            <button onClick={Delete} className="minus">
-              <Minus />
+          <div>
+            <p>Product Item</p>
+          </div>
+          <div className="flex ">
+            {counter != 1 && (
+              <button onClick={Delete} className="minus">
+                <Minus />
+              </button>
+            )}
+            <span className={`show__price ${counter === 1 ? "br" : ""}`}>
+              <p className="flex centerAll">{counter} </p>
+            </span>
+            <button onClick={Add} className="plus">
+              <Plus />
             </button>
-          )}
-          <span className={`show__price ${counter == 2 ? "br" : ""}`}>
-            <p className="flex centerAll">{counter - 1} </p>
-          </span>
-          <button onClick={Add} className="plus">
-            <Plus />
-          </button>
+          </div>
         </div>
         <div className="btnProductBuy">
           <button
             onClick={() =>
               alert(
-                "this feature will be added soon" +
+                "this feature will be added soon " +
                   "This is your Total Price " +
                   BuyPrice
               )

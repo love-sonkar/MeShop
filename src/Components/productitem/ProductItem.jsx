@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { DollarSign } from "react-feather";
 import "./productitem.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -32,10 +31,7 @@ const ProductItem = ({ details }) => {
         <div className="content__wrapper">
           <div className="titleprice">
             <h1>{details.title}</h1>
-            <p className="price flex">
-              <DollarSign />
-              {details.price}
-            </p>
+            <p className="price flex">{details.price} Rs</p>
           </div>
           <div className="content">
             <p>{details.rating}</p>

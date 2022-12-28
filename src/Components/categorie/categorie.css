@@ -4,6 +4,7 @@
   grid-auto-flow: column;
   overflow-x: scroll;
   padding: 0.625rem;
+  user-select: none;
 }
 
 .categoriebadge {
